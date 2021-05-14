@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login page</title>
+	<link rel="stylesheet" type="text/css" href="sample.css">
+	<style type="text/css">
+		.c{
+			margin-top:-150px;
+		}
+		input:focus{
+			background-color:#FFD662FF;
+		}
+	</style>
+	<script type="text/javascript">
+		function check(form){
+			var name=document.getElementById("uname").value;
+			var password=document.getElementById("pwd").value;
+			var r=/^[a-z A-Z]+$/;
+			var p=/^[A-Z]+[a-z]+[0-9]+$/;
+			if(name.length==0 && password.length==0){
+				alert("form should not be empty");
+				form.uname.focus();
+				return false;
+			}else{
+				if(name.length!=0){
+					if(password.match(p) && password.length>=8){
+						alert("login successfull");
+						return true;
+					}else{
+						alert("please enter correct password");
+						form.pwd.focus();
+						return false;
+					}
+				}else{
+					alert("name should not be empty");
+					form.uname.focus();
+					return false;
+				}
+			}
+		}
+		
+	</script>
+</head>
+<body>
+     <div class="c">
+     	<div class="a">
+		<div class="box">
+		<form align="center" onsubmit="return check(this);">
+			<fieldset align="left">
+				<legend><h1>LOGIN FORM:</h1></legend><table align="center"><tr>
+				<td >USERNAME:</td>
+				<td><input type="text" name="uname" placeholder="enter your name" name="uname" id="uname"></td>
+			</tr>
+			<tr><td>PASSWORD:</td>
+				<td><input type="password" name="pwd" placeholder="enter your password" name="pwd" id="pwd"></td></tr>
+				<tr>
+					<td>
+						<input type="submit" name="submit" value="login">
+					</td>
+					<td>
+						<input type="reset" name="refresh">
+					</td>
+					
+				</tr>
+				
+				
+			</table>
+		</form></fieldset>
+			
+    </div>	
+     </div>
+	</div>
+    
+</body>
+</html>

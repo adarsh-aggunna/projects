@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		input:focus{
+			background-color:#FFD662FF; 
+		}
+	</style>
+	<title>SignUp page</title>
+	<script type="text/javascript">
+		function validate(form){
+			var name=document.getElementById("uname").value;
+			var password=document.getElementById("pwd").value;
+			var cpassword=document.getElementById("cpwd").value;
+			var email=document.getElementById("email").value;
+			var gender=document.getElementById("gen").value;
+			var age=document.getElementById("age").value;
+			var qualification=document.getElementById("qual").value;
+			var phonenumber=document.getElementById("phn").value;
+			var p=/^[A-Z]+[a-z]+[0-9]+$/;
+			var r=/^[a-z A-Z]+(@)+[a-z]+(.com)$/;
+			if(name.length==0 && password.length==0){
+				alert("form should not be empty");
+				form.uname.focus();
+				return false;
+			}else{
+				if(name!=0 ){
+				if(password.length>=8 && password.match(p)){
+					if(password==cpassword){
+						if(email.lenth!=0 && email.match(r)){
+							if(gender.length!=0){
+								if(age.length!=0){
+									if(qualification.length!=0){
+										if(phonenumber.length!=0 && phonenumber.length==10){
+											alert("login successfull");
+											return true;
+										}else{
+											alert("phonenumber is invalid");
+											form.phn.focus();
+                                             return false;
+										}
+									}else{
+										alert("qualification should not be empty");
+										form.qual.focus();
+										return false;
+									}
+								}else{
+									alert("age should not be empty");
+									form.age.focus();
+									return false;
+								}
+							}else{
+								alert("gender should not be empty");
+								form.gen.focus();
+								return false;
+							}
+						}else{
+							alert("please enter an valid email");
+							form.email.focus();
+							return false;
+						}
+					}else{
+						alert("please enter confirm password and should be equal to password");
+						form.cpwd.focus();
+						return false;
+					}
+
+				}else{
+					alert("please enter an valid password and should be greater than 8 characters");
+					form.pwd.focus();
+					return false;
+				}
+			}else{
+				alert("name should not be empty");
+				form.uname.focus();
+				return false;
+			}
+			}
+              
+
+		}
+	</script>
+</head>
+<link rel="stylesheet" type="text/css" href="sample.css">
+<center><body>
+<div class="box">	
+<form onsubmit="return validate(this);"><fieldset>
+	<legend><H1>SIGNUP FORM:</H1></legend>
+
+<table>
+<tr>
+<td>NAME:</td>
+<td><input type="text" placeholder="Enter your name" id="uname" name="uname"></td>
+</tr>
+<tr>
+<td>PASSWORD:</td>
+<td><input type="password" placeholder="Enter your password" id="pwd" name="pwd"></td>
+</tr>
+<tr>
+<td>CONFIRM PASSWORD:</td>
+<td><input type="password" placeholder="Enter your password" id="cpwd" name="cpwd"></td>
+</tr>
+<tr>
+<td>E-MAIL:</td>
+<td><input type="email" placeholder="Enter your email" id="email" name="email"></td>
+</tr>
+<tr>
+<td>GENDER:</td>
+<td>Male<input type="radio" name="GENDER" id="gen" name="gen"> Female<input type="radio" name="GENDER" id="gen" name="gen"></td>
+
+</tr>
+<tr>
+<td>AGE:</td>
+<td><input type="number" placeholder="Enter your age" maxlength="3" id="age" name="age"></td>
+</tr>
+
+<tr>
+<td>QUALIFICATION:</td>
+<td><input type="teXT" placeholder="Enter your qualification" id="qual" name="qual"></td>
+</tr>
+<tr>
+<td>PHONE NUMBER:</td>
+<td><input type="number" placeholder="Enter your phonenumber" name="enter your phonenumber"  id="phn" name="phn"></td>
+</tr>
+<tr>
+
+<td><input type="submit" value="submit" ></td>
+<td><input type="reset" value="reset " ></td>
+</tr>
+
+
+</table>
+	
+
+</body></center>
+</fieldset></form>
+</div>
+</html>
+
+
+
+

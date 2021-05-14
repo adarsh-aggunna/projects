@@ -1,0 +1,30 @@
+.a{
+	color: black;
+	padding-top:200px;
+	
+}
+body{
+	background-image:url('web.jpg');
+    background-size: cover;
+	background-repeat:no-repeat; 
+
+}
+.box{
+	background: rgba(0,0,0,0.4);
+}
+.box_1{
+	background: rgba(255,255,255,0.4);
+	font-family: sans-serif;
+}
+p{
+	color:white;
+}
+td{
+	color:white;
+	font-family:sans-serif;
+}
+h1{
+	color: white;
+	font-family:sans-serif;
+}
+
